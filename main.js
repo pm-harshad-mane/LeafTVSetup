@@ -11105,6 +11105,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 return t.test(e) ? e.replace(t, "$1") : "none"
             },
             loadAPS: function() {
+                console.log("loading aps js file", new Date());
                 !function(e, t, i, a, n, r, o) {
                     function s(i, a) {
                         t[e]._Q.push([i, a])
