@@ -11210,9 +11210,8 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 var t = this
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-                window.googletag.cmd.push(function() {
-                    console.log("in refreshBids, calling loadPubmaticAds", new Date());
-                    t.loadPubmaticAds(e, i, a)
+                window.googletag.cmd.push(function() {                    
+                    console.log("In refreshBids", new Date());
                     console.log("Calling Amazon Fetchbids", new Date());
                     window.apstag.fetchBids({
                         slots: t.getAmazonBids(e),
@@ -11222,6 +11221,8 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                         //console.log("Calling refreshbids", new Date());
                         //t.refreshBids(e, i, a)
                     })
+                    console.log("Calling loadPubmaticAds", new Date());
+                    t.loadPubmaticAds(e, i, a)
                 })
             },
             loadPubmaticAds: function(e) {
