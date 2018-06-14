@@ -11033,6 +11033,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                     slots: n,
                     timeout: 2e3
                 }, function(n) {
+                    console.log("when does this function executes ?", new Date());
                     //console.log("Calling refreshbids", new Date());
                     //t.refreshBids(e, i, a)
                 })
@@ -14025,6 +14026,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 var t = this
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , a = this.getAmazonBids(e);
+                console.log("what does this code do ?????", new Date());  
                 window.apstag.fetchBids({
                     slots: a,
                     timeout: 2e3
