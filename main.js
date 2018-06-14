@@ -11299,6 +11299,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                     Krux.segments = e("segs") && e("segs").split(",") || []
                 }(),
                 function(e, t, i, a, n, r, o) {
+                    console.log("Loading apstag.js", new Date());
                     function s(i, a) {
                         t[e]._Q.push([i, a])
                     }
@@ -11314,7 +11315,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                     },
                     r = i.createElement(a),
                     r.async = !0,
-                    r.src = "//c.amazon-adsystem.com/aax2/apstag.js",
+                    r.src = "//c.amazon-adsystem.com/aax2/apstag.js", // this one is actually used.
                     o = i.getElementsByTagName(a)[0],
                     o.parentNode.insertBefore(r, o))
                 }("apstag", window, document, "script"),
