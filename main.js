@@ -11024,20 +11024,20 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
             display: function(e) {
                 var t = this
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
-                  , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
-                  , n = this.getAmazonBids(e);
+                  , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+                 // , n = this.getAmazonBids(e);
                 
                 console.log("Calling refreshbids", new Date());
                 t.refreshBids(e, i, a)
-                console.log("Calling Amazon Fetchbids", new Date());
-                window.apstag.fetchBids({
-                    slots: n,
-                    timeout: 2e3
-                }, function(n) {
-                    console.log("when does this function executes ?", new Date());
-                    //console.log("Calling refreshbids", new Date());
-                    //t.refreshBids(e, i, a)
-                })
+                // console.log("Calling Amazon Fetchbids", new Date());
+                // window.apstag.fetchBids({
+                //     slots: n,
+                //     timeout: 2e3
+                // }, function(n) {
+                //     console.log("when does this function executes ?", new Date());
+                //     //console.log("Calling refreshbids", new Date());
+                //     //t.refreshBids(e, i, a)
+                // })
             },
             getAmazonBids: function(e) {
                 var t = this;
@@ -11213,6 +11213,15 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 window.googletag.cmd.push(function() {
                     console.log("in refreshBids, calling loadPubmaticAds", new Date());
                     t.loadPubmaticAds(e, i, a)
+                    console.log("Calling Amazon Fetchbids", new Date());
+                    window.apstag.fetchBids({
+                        slots: t.getAmazonBids(e),
+                        timeout: 2e3
+                    }, function(n) {
+                        console.log("in fetchbids call-back", new Date());
+                        //console.log("Calling refreshbids", new Date());
+                        //t.refreshBids(e, i, a)
+                    })
                 })
             },
             loadPubmaticAds: function(e) {
