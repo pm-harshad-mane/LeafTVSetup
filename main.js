@@ -11251,11 +11251,14 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 n.default)(this, "$store.state.config.ads.GPT", {})
                   , t = (0,
                 n.default)(e, "pubmaticURL", "");
+                console.log("Loading pwt.js", new Date());
                 window.PWT = {},
                 window.googletag = window.googletag || {},
                 window.googletag.cmd = window.googletag.cmd || [],
                 window.PWT.jsLoaded = function() {
                     !function() {
+                        console.log("Loaded pwt.js", new Date());
+                        console.log("Loading gpt.js", new Date());
                         var e = document.createElement("script")
                           , t = "https:" == document.location.protocol;
                         e.src = (t ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
