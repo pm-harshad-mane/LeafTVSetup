@@ -11399,6 +11399,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                         timeout: 2e3
                     }, function(n) {
                         window.apstag.setDisplayBids()
+                        window.OWT.notifyExternalBiddingComplete();
                     })
                     t.loadPubmaticAds(e, i, a)
                 })
@@ -11408,6 +11409,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                   , i = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , a = this.getSlotFromAdsArray(e);
                 //window.apstag.setDisplayBids(),
+                window.OWT.registerExternalBidders();
                 e.forEach(function(e) {
                     window.googletag.display(e.id),
                     e.displayed = !0
