@@ -11395,7 +11395,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
 
                 window.googletag.cmd.push(function() {
                     window.apstag.fetchBids({
-                        slots: t.getAmazonBids(e);,
+                        slots: t.getAmazonBids(e),
                         timeout: 2e3
                     }, function(n) {
                         window.apstag.setDisplayBids()
