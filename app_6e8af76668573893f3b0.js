@@ -11394,6 +11394,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                   , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];                
 
                 window.googletag.cmd.push(function() {
+                    window.OWT.registerExternalBidders();
                     window.apstag.fetchBids({
                         slots: t.getAmazonBids(e),
                         timeout: 900 // changed timeout for A9 from 2000 ms
@@ -11408,8 +11409,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , i = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , a = this.getSlotFromAdsArray(e);
-                //window.apstag.setDisplayBids(),
-                window.OWT.registerExternalBidders();
+                //window.apstag.setDisplayBids(),                
                 e.forEach(function(e) {
                     window.googletag.display(e.id),
                     e.displayed = !0
