@@ -11213,11 +11213,14 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 window.googletag.cmd.push(function() {                    
                     console.log("In refreshBids", new Date());
                     console.log("Calling Amazon Fetchbids", new Date());
+                    window.OWT.registerExternalBidders();
                     window.apstag.fetchBids({
                         slots: t.getAmazonBids(e),
                         timeout: 2e3
                     }, function(n) {
                         console.log("in fetchbids call-back", new Date());
+                        window.apstag.setDisplayBids()
+                        window.OWT.notifyExternalBiddingComplete();
                         //console.log("Calling refreshbids", new Date());
                         //t.refreshBids(e, i, a)
                     })
@@ -11230,7 +11233,6 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                   , i = arguments.length > 2 && void 0 !== arguments[2] && arguments[2] 
                   , a = this.getSlotFromAdsArray(e);
                 console.log("in loadPubmaticAds", new Date());  
-                window.apstag.setDisplayBids(),
                 e.forEach(function(e) {
                     window.googletag.display(e.id),
                     e.displayed = !0
