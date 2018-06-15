@@ -11213,12 +11213,14 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , n = this.getAmazonBids(e);
-                window.apstag.fetchBids({
-                    slots: n,
-                    timeout: 2e3
-                }, function(n) {
-                    t.refreshBids(e, i, a)
-                })
+                t.refreshBids(e, i, a)
+                console.log("calling refreshBids", new Date());  
+                // window.apstag.fetchBids({
+                //     slots: n,
+                //     timeout: 2e3
+                // }, function(n) {
+                //     t.refreshBids(e, i, a)
+                // })
             },
             getAmazonBids: function(e) {
                 var t = this;
@@ -11389,8 +11391,15 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
             refreshBids: function(e) {
                 var t = this
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
-                  , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+                  , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];                
+
                 window.googletag.cmd.push(function() {
+                    window.apstag.fetchBids({
+                        slots: t.getAmazonBids(e);,
+                        timeout: 2e3
+                    }, function(n) {
+                        window.apstag.setDisplayBids()
+                    })
                     t.loadPubmaticAds(e, i, a)
                 })
             },
@@ -11398,7 +11407,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , i = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , a = this.getSlotFromAdsArray(e);
-                window.apstag.setDisplayBids(),
+                //window.apstag.setDisplayBids(),
                 e.forEach(function(e) {
                     window.googletag.display(e.id),
                     e.displayed = !0
