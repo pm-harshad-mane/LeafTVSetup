@@ -11396,7 +11396,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 window.googletag.cmd.push(function() {
                     window.apstag.fetchBids({
                         slots: t.getAmazonBids(e),
-                        timeout: 2e3
+                        timeout: 900 // changed timeout for A9 from 2000 ms
                     }, function(n) {
                         window.apstag.setDisplayBids()
                         window.OWT.notifyExternalBiddingComplete();
