@@ -5454,7 +5454,7 @@ function pwtCreatePrebidNamespace(preBidNameSpace) {
             kgp: "_DIV_@_W_x_H_",
             sk: "true"
         },
-        openx: {
+        /*openx: {
             delDomain: "demandmedia-d.openx.net",
             rev_share: "0.0",
             timeout: "1000",
@@ -5598,7 +5598,7 @@ function pwtCreatePrebidNamespace(preBidNameSpace) {
                     unit: "539512560"
                 }
             }
-        },
+        },*/
         audienceNetwork: {
             rev_share: "0.0",
             timeout: "1000",
@@ -6045,7 +6045,7 @@ function pwtCreatePrebidNamespace(preBidNameSpace) {
                     placementId: "12506085"
                 }
             }
-        },
+        }/*,
         aol: {
             network: "9836.1",
             server: "adserver-us.adtech.advertising.com",
@@ -6190,7 +6190,7 @@ function pwtCreatePrebidNamespace(preBidNameSpace) {
                     placement: "4732005"
                 }
             }
-        }
+        }*/
     }
 }
 ), (function(t, e, i) {
