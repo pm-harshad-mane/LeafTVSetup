@@ -6828,8 +6828,9 @@ function pwtCreatePrebidNamespace(preBidNameSpace) {
         ae.getStatusOfSlotForDivId(i[0]) != Y.SLOT_STATUS.DISPLAYED ? ae.updateStatusAndCallOriginalFunction_Display("Calling original display function after timeout with arguments, ", t, e, i) : q.log("AdSlot already rendered")
     }
     function _(t, e, i) {
-        q.getExternalBidderStatus(e) && Q.getAllPartnersBidStatuses(window.PWT.bidMap, e) ? (q.resetExternalBidderStatus(e),
-        i()) : t > 0 && window.setTimeout((function() {
+        q.log("time:" + e + " getExternalBidderStatus: " + q.getExternalBidderStatus(t) + " getAllPartnersBidStatuses:" + Q.getAllPartnersBidStatuses(window.PWT.bidMap, t));
+        q.getExternalBidderStatus(e) && Q.getAllPartnersBidStatuses(window.PWT.bidMap, e) ? (q.resetExternalBidderStatus(e),        
+        i()) : t > 0 && window.setTimeout((function() {            
             ae.executeDisplay(t - 10, e, i)
         }
         ), 10)
