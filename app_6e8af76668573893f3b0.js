@@ -11390,17 +11390,19 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
             },
             refreshBids: function(e) {
                 var t = this
+                  , notifyId = undefined
+                  , divIds = e.map((slot) => slot.id)  
                   , i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];                
 
                 window.googletag.cmd.push(function() {
-                    window.OWT.registerExternalBidders();
+                    notifyId = window.OWT.registerExternalBidders(divIds);
                     window.apstag.fetchBids({
                         slots: t.getAmazonBids(e),
                         timeout: 900 // changed timeout for A9 from 2000 ms
                     }, function(n) {
                         window.apstag.setDisplayBids()
-                        window.OWT.notifyExternalBiddingComplete();
+                        window.OWT.notifyExternalBiddingComplete(notifyId);
                     })
                     t.loadPubmaticAds(e, i, a)
                 })
