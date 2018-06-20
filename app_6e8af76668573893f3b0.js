@@ -11214,7 +11214,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                   , a = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , n = this.getAmazonBids(e);
                 t.refreshBids(e, i, a)
-                console.log("calling refreshBids", new Date());  
+                //console.log("calling refreshBids", new Date());  
                 // window.apstag.fetchBids({
                 //     slots: n,
                 //     timeout: 2e3
@@ -11411,7 +11411,7 @@ webpackJsonp([1], Array(54).concat([function(e, t, i) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
                   , i = arguments.length > 2 && void 0 !== arguments[2] && arguments[2]
                   , a = this.getSlotFromAdsArray(e);
-                //window.apstag.setDisplayBids(),                
+                //window.apstag.setDisplayBids(),
                 e.forEach(function(e) {
                     window.googletag.display(e.id),
                     e.displayed = !0
